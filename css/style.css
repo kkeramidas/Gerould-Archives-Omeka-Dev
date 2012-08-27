@@ -1,0 +1,372 @@
+/*   
+Theme Name: Gerould Tribute Theme
+The Gerould Tribute Theme is copyright Kimon Keramidas
+*/
+
+/* Reset browser defaults */
+@import url('reset.css');
+
+
+/* == Generic == */
+
+body {
+	font-family:Georgia, serif;
+	font-size:14px;
+	line-height:1.6em;
+	color: #242424;
+}
+
+    /* -- Headings -- */
+    h1 {}
+    h2 {
+		font-size:120%;
+	}
+
+    h3 {}
+    h4 {}
+    h5 {}
+    h6 {}
+
+    /* -- Misc Block elements -- */
+    p {}
+    ul {}
+    ol {}
+    dl {}
+    li {}
+
+    /* -- Misc Inline elements -- */
+    img {}
+
+    em {font-style:italic;}
+    strong {font-weight:bold;}
+
+    /* -- Links -- */
+    a:link, a:visited {
+		color: #5ea8ab;
+		text-decoration:none;
+}
+
+    a:hover, a:active {
+		color: #7d7f75;
+	}
+	
+	.view-items-link {}
+
+    /* -- Body Classes -- */
+
+	hr {
+		border-style:dotted;
+		color: #7d7f75;
+	}
+
+
+    /* -- Body Classes -- */
+    .browse {}
+    .item {}
+    .show {}
+    .summary {}
+    .tags {}
+
+    /* -- Misc Classes */
+
+    .image {} /* items/browse  */
+
+    .description {}
+
+    .even {}
+    .odd {}
+
+        /* Navigation Classes*/
+        .navigation {}
+
+        /* Pagination Classes */
+        .pagination {}
+
+        .next {}
+        .previous {}
+
+        /* Items Classes*/
+        .browse-items-link {}
+
+        .featured {}
+
+        .element {}
+        .element-text {}
+
+        .item {}
+        .item-description {}
+        .item-img {}
+        .items-list {}
+        .item-meta
+        .items-nav
+        .item-pagination {}
+        .item-tags {}
+        .item-thumbnail {}
+        .item-title {}
+
+
+        /* Collections Classes */
+        .collection {}
+        .collection-description {}
+
+        /* Exhibits Classes */
+        .exhibit {}
+        .exhibit-description {}
+        .exhibit-tags {}
+
+        /* Microformats Classes */
+        .hentry {}
+
+        /* Search Classes */
+        .no-results {}
+
+        /* Tags Classes */
+        .tags {}
+
+        /* Tag Clouds */
+        .hTagcloud ul {}
+            .hTagcloud li {}
+
+            .popular a {}
+            .v-popular a {}
+            .vv-popular a {}
+            .vvv-popular a {}
+            .vvvv-popular a {}
+            .vvvvv-popular a {}
+            .vvvvvv-popular a {}
+            .vvvvvvv-popular a {}
+            .vvvvvvvv-popular a {}
+
+
+/* == Wrap == */
+#wrap {
+	margin:0 auto;
+	width:1000px;
+}
+
+/* == Header == */
+#header {
+}
+
+	#site-title{
+		float:left;
+		width:80%;
+		margin-top:45px;
+		margin-bottom:90px;
+		height:100px;
+		}
+
+    #search-container {
+		float:right;
+		width:20%;
+		margin-top:210px;
+}
+
+    #search-container a {
+		float:right;
+		padding-bottom:4px;
+		font-size:110%;
+}
+
+/* Simple Search */
+
+
+#simple-search #search{
+	float:right;
+	width:160px;
+	height:20px;
+	padding:2px;
+	background: #fff url('../images/mag-glass.png') no-repeat 142px 4px;
+	}
+
+#simple-search #submit_search{
+	display:none;
+	}
+
+/* Advanced Search */
+#advanced-search-form {}
+    #submit_search_advanced {}
+
+/* == Navigation == */
+
+#primary-nav{
+	clear:left;
+	width:80%;
+}
+
+#primary-nav ul.navigation li{
+	display:inline;
+	font-size:140%;
+	padding-right:24px;
+	background: #fff url('../images/primary-nav-separator.png') no-repeat right top;
+}
+
+#primary-nav ul.navigation li a{
+	text-decoration:none;
+	color: #242424;
+}
+
+#primary-nav ul.navigation li a:hover{
+	color: #5ea8ab;
+}
+
+    #secondary-nav {}
+
+/* == Content == */
+
+    /* Structure */
+    #content {
+	clear:both;
+	margin-top:20px;
+	border-top: 3px dotted #7d7f75;
+	padding-top:25px;
+}
+        #primary {}
+			
+			#image-show{
+				width:100%;
+				height:400px;
+				padding-bottom: 25px;
+				border-bottom: 3px dotted #7d7f75;
+				margin-bottom:20px;
+			}
+			
+			#large-text-intro{
+				font-family: "Hoefler Text", Georgia, Serif;
+				font-size:31px;
+				margin-bottom:20px;
+				line-height: 42px;
+			}
+			
+			.name-color {
+				color: #5ea8ab;
+			}
+			
+			#small-text-intro {
+			padding-bottom:30px;
+				border-bottom: 3px dotted #7d7f75;				
+			}
+			
+			#small-text-intro-left {
+				float:left;
+				width:48%;
+				font-size:120%;
+			}
+			
+			#small-text-intro-right {
+				float:right;
+				width:48%;
+				padding-bottom:30px;
+				font-size:120%;
+			}
+			
+        #secondary {
+			clear:both;
+		}
+
+    /* General */
+    #featured-item {
+	clear:both;
+	float:right;
+	width:48%;
+	margin:30px 0;
+	padding:5px;
+	border:solid 3px #242424;
+}
+    #recent-items {}
+
+    #featured-exhibit {}
+
+    #pagination-top {}
+    #pagination-bottom {}
+
+    /* Home Page */
+    #featured-collection {
+	clear:left;
+	float:left;
+	width:48%;
+	margin:30px 0;
+	padding:5px;
+	border:solid 3px #7d7f75;
+}
+
+#featured-item h2,
+#featured-collection h2,
+#recent-items h2{
+	color: #5ea8ab;
+}
+
+    /* Items Pages */
+    #extended-metadata {}
+        #item-type {}
+
+    #item-metadata {}
+        #item-publisher {}
+        #item-creator {}
+        #item-description {}
+        #item-relation {}
+        #item-spatial-coverage {}
+        #item-rights {}
+        #item-source {}
+        #item-subject {}
+        #item-additional-creator {}
+        #item-format {}
+        #item-contributor {}
+        #item-rights-holder {}
+        #item-provenance {}
+        #item-date {}
+        #item-temporal-coverage {}
+        #item-date-added {}
+        #item-collection {}
+        #item-files {}
+        #item-tags {}
+        #item-citation {}
+
+    #next-item {}
+    #previous-item {}
+
+        /* Search Results */
+        #advanced_search_header {}
+        #primary #basic_search_header {}
+        #primary #submit_search {}
+
+    /* Exhibits Pages */
+    #exhibit-nav {}
+    #exhibit-summary {}
+    #exhibit-show {}
+
+    /* Collections Pages */
+    #collection-description {}
+    #collectors {}
+
+
+/* == Footer == */
+	#footer ul.navigation{
+		margin-top:30px;
+		text-align:right;
+	
+	}
+	
+		#footer ul.navigation a{
+			color:#242424;
+		}
+		
+		#footer ul.navigation a:hover{
+			color: #5ea8ab;
+		}	
+		
+		#footer ul.navigation li{
+			display:inline;
+			font-size:110%;
+			padding-right:24px;
+			background: #fff url('../images/primary-nav-separator.png') no-repeat right top;
+		}
+
+	#footer-text {
+		clear:both;
+		margin-top:20px;
+		border-top: 3px dotted #7d7f75;
+		padding-top:25px;
+		text-align:center;
+	}
+	
