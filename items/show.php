@@ -4,6 +4,8 @@
 
     <h1><?php echo item('Dublin Core', 'Title'); ?></h1>
 
+	<div id="metadata">
+
     <?php echo custom_show_item_metadata(); ?>
 
     <!-- The following returns all of the files associated with an item. -->
@@ -33,8 +35,14 @@
         <h3><?php echo __('Citation'); ?></h3>
         <div class="element-text"><?php echo item_citation(); ?></div>
     </div>
+	
+	</div>
+
+    <div id="plugins">
 
     <?php echo plugin_append_to_items_show(); ?>
+
+	</div>
 
     <ul class="item-pagination navigation">
         <li id="previous-item" class="previous"><?php echo link_to_previous_item(); ?></li>
