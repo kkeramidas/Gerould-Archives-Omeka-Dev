@@ -25,11 +25,11 @@ head(array('title'=>$pageTitle,'bodyid'=>'items','bodyclass' => 'browse'));
         </div>
         <?php endif; ?>
 
-        <?php if ($text = item('Item Type Metadata', 'Text', array('snippet'=>250))): ?>
+        <?php if ($text = item('Item Type Metadata', 'Text', array('snippet'=>310))): ?>
         <div class="item-description">
             <p><?php echo $text; ?></p>
         </div>
-        <?php elseif ($description = item('Dublin Core', 'Description', array('snippet'=>250))): ?>
+        <?php elseif ($description = item('Dublin Core', 'Description', array('snippet'=>310))): ?>
         <div class="item-description">
             <?php echo $description; ?>
         </div>

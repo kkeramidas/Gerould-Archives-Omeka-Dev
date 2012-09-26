@@ -14,26 +14,28 @@
 	<div id="small-text-intro">
 
 		<div id="small-text-intro-right">
-		Sed dictum dolor ac magna eleifend varius. Sed sit amet nulla purus. Proin in fringilla magna. Praesent a tortor eget lorem placerat adipiscing. Vivamus vel felis erat. Sed dolor nisi, pretium a pellentesque vel, facilisis et lacus. Suspendisse venenatis porta volutpat. Phasellus rhoncus tristique nulla, sed fringilla mi volutpat nec. Sed ornare placerat dapibus. Vestibulum urna augue, vulputate at mollis id, lacinia ut nisi. Nunc facilisis scelerisque malesuada. Fusce eget arcu diam, ut ultrices elit. Ut commodo ligula eget justo placerat pulvinar.	
+		Sed dictum dolor ac magna eleifend varius. Sed sit amet nulla purus. Proin in fringilla magna. Praesent a tortor eget lorem placerat adipiscing. Vivamus vel felis erat. Sed dolor nisi, pretium a pellentesque vel, facilisis et lacus. Suspendisse venenatis porta volutpat. Phasellus rhoncus tristique nulla, sed fringilla mi volutpat nec. Sed ornare placerat dapibus. Vestibulum urna augue, vulputate at mollis id, lacinia ut nisi. Nunc facilisis scelerisque malesuada.	
 		</div>
 		
 		<div id="small-text-intro-left">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra tristique elementum. Nam aliquam laoreet erat, quis varius diam feugiat in. Nulla facilisi. Proin in tortor nulla. Vestibulum lobortis nunc vitae elit condimentum dictum. Integer pretium elit sit amet magna ullamcorper eu tristique est lacinia. Nam pulvinar iaculis euismod. Cras ut ante mi, sollicitudin tempus risus. In hac habitasse platea dictumst. Duis sed sem sed mauris cursus vulputate. Maecenas gravida, tortor vitae consequat molestie, lacus sem scelerisque leo, a adipiscing augue ipsum a leo. Aliquam erat volutpat. Donec semper nunc turpis. Pellentesque elementum purus sed nunc ullamcorper aliquam tempus justo luctus. Duis in magna eget purus molestie vestibulum vitae id diam.		
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pharetra tristique elementum. Nam aliquam laoreet erat, quis varius diam feugiat in. Nulla facilisi. Proin in tortor nulla. Vestibulum lobortis nunc vitae elit condimentum dictum. Integer pretium elit sit amet magna ullamcorper eu tristique est lacinia. Nam pulvinar iaculis euismod. Cras ut ante mi, sollicitudin tempus risus. 		
 		</div>
+		
+		<div style="clear:both"></div>
 
 	</div>
 
     <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
     <!-- Featured Item -->
     <div id="featured-item">
-        <?php echo display_random_featured_item(); ?>
+        <?php echo gerould_display_random_featured_item(); ?>
     </div><!--end featured-item-->
     <?php endif; ?>
 
     <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
     <!-- Featured Collection -->
     <div id="featured-collection">
-        <?php echo display_random_featured_collection(); ?>
+        <?php echo gerould_display_random_featured_collection(); ?>
     </div><!-- end featured collection -->
     <?php endif; ?>
 
@@ -52,7 +54,7 @@
         <h2><?php echo __('Recently Added Items'); ?></h2>
 
         <?php
-        $homepageRecentItems = (int)get_theme_option('Homepage Recent Items') ? get_theme_option('Homepage Recent Items') : '3';
+        $homepageRecentItems = (int)get_theme_option('Homepage Recent Items') ? get_theme_option('Homepage Recent Items') : '4';
         set_items_for_loop(recent_items($homepageRecentItems));
         if (has_items_for_loop()):
         ?>
@@ -67,13 +69,17 @@
                 <div class="item-img">
                     <?php echo link_to_item(item_square_thumbnail()); ?>
                 </div>
-                <?php endif; ?>
+	                <?php if($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
 
-                <?php if($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
+	                <div class="item-image-description"><?php echo $desc; ?><?php echo link_to_item('see more',(array('class'=>'show'))) ?></div>
+
+	                <?php endif; ?>
+                <?php elseif($desc = item('Dublin Core', 'Description', array('snippet'=>150))): ?>
 
                 <div class="item-description"><?php echo $desc; ?><?php echo link_to_item('see more',(array('class'=>'show'))) ?></div>
 
                 <?php endif; ?>
+
 
             </div>
             <?php endwhile; ?>

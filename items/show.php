@@ -1,10 +1,25 @@
 <?php head(array('title' => item('Dublin Core', 'Title'), 'bodyid'=>'items','bodyclass' => 'show')); ?>
 
-<div id="primary">
+<div id="primary" class="<?php echo item('collection name')?>">
 
     <h1><?php echo item('Dublin Core', 'Title'); ?></h1>
 
-	<div id="metadata">
+	<?php if (item_has_type('Still Image') && item_has_files()):?>
+	<div id="image-right">
+		<?php echo item_fullsize(); ?>
+	</div>
+	<?php endif;?>
+
+<?php 
+	if (item_has_files()) {
+		$metadataclass= 'left';
+	}
+	else{
+		$metadataclass= 'full';
+	}
+?>
+
+	<div id="metadata" class="<?php echo $metadataclass?>">
 
     <?php echo custom_show_item_metadata(); ?>
 
